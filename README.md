@@ -43,7 +43,29 @@ Example of code to see the logs:
     }
     . . .
 ```  
+Example of using intent to pass the data from one activity to other:  
 
+```kotlin
+    fun onOkButtonClick(view: View) {
+        Log.d(TAG, "onClick: called")
+
+        val dateNumber = birthNumber.text.toString().toInt()
+
+        val intent = Intent(this@MainActivity, SecondActivity::class.java)
+        intent.putExtra("Number", dateNumber)
+        startActivity(intent)
+    }
+```  
+And getting it and modifying in the second activity:  
+```kotlin
+        val intent = getIntent()
+        val dateNumber = intent.getIntExtra("Number", 0)
+
+        if (dateNumber != null) {
+            val temp = dateNumber * 100
+            starNumber.text = (temp..3200).random().toString()
+        }
+```  
 In the _screens_ folder I provided the screens on how application looks. 
 Also changed the icon and also configured the constraints in that way that  
 when a user will be rotating their phone, everything would stay in place.  
