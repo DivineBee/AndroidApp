@@ -1,4 +1,4 @@
-# lAB 1
+# LAB 1
 
 University: Technical University of Moldova  
 Specialty: Software Engineering  
@@ -23,7 +23,7 @@ and handle its action. Some not trivial action handling are welcome
 ## Explanation:  
 In order to do this laboratory work, I chose to get the user a "lucky"  
 number based on their birth date using Math.random where the date is  
-passed. I also added logs to see the android activity lifecycle in practice
+passed. I also added logs to see the android activity lifecycle in practice  
 which was discussed during theory lessons. The output was in the Logcat  
 window. Here is the result after running my application:  
 ![alt text](https://raw.githubusercontent.com/DivineBee/AndroidApp/Lab1/screens/Безымянный.png)  
