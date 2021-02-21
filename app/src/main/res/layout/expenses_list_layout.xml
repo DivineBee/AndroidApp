@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:id="@+id/expensesLogo"
+            tools:src = "@drawable/food"
+            android:scaleType="fitCenter"
+            android:layout_marginEnd="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/amountExpenses"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="28sp"
+                android:textColor="#d12417"
+                tools:text = "300.50 MDL"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/category"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="#7a5333"
+                tools:text = "FOOD"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/expensesDescription"
+                android:layout_margin="1dp"
+                android:textSize="22sp"
+                tools:text = "Bought products for a week"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
