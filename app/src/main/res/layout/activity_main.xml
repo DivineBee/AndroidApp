@@ -6,60 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/birthNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Number"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plainDescr" />
-
     <TextView
-        android:id="@+id/plainDescr"
+        android:id="@+id/textMoney"
         android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:scrollIndicators="end|right"
         android:scrollbars="vertical"
-        android:text="Enter your birthday date to calculate your lucky number"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="MONEY MANAGER"
+        android:textAlignment="center"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnOk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#03c2fc"
-        android:onClick="onOkButtonClick"
-        android:text="OK"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/birthNumber" />
-
-    <TextView
-        android:id="@+id/luckyNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/buttonWallet"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="#f5ad42"
+        android:ellipsize="middle"
+        android:text="Wallet"
+        android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOk" />
+        app:layout_constraintStart_toStartOf="@+id/textMoney"
+        app:layout_constraintTop_toBottomOf="@+id/textMoney" />
+
+    <Button
+        android:id="@+id/buttonExpenses"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="24dp"
+        android:background="#f5ad42"
+        android:text="Expenses"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonWallet"
+        app:layout_constraintEnd_toEndOf="@+id/textMoney" />
+
+    <Button
+        android:id="@+id/buttonAnalysis"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="32dp"
+        android:background="#f5ad42"
+        android:text="Analysis"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/buttonWallet"
+        app:layout_constraintTop_toBottomOf="@+id/buttonWallet" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

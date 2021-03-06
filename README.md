@@ -1,80 +1,28 @@
-# LAB 1
+# LAB 2
 
 University: Technical University of Moldova  
 Specialty: Software Engineering  
 Group: FAF-182
-Object: Mobile Application Programming
-Teacher: Alexandr Vdovicenco
-
-Laboratory work task:  
-
-* Init mobile application on selected platform  
-* Create at least 2 screens which transfer data from one screen to another  
-* Perform some data changes to data you received in screen No.2 and pass  
-it back to screen No. 1  
-* Add at least one active element on the screen, ex. button, text field  
-and handle its action. Some not trivial action handling are welcome  
-* Change Icon of the app to custom one  
+Object: Mobile Application Programming  
+Teacher: Alexandr Vdovicenco  
 
 ## Technologies and language used:
 * Android   
 * Kotlin   
 
 ## Explanation:  
-In order to do this laboratory work, I chose to get the user a "lucky"  
-number based on their birth date using Math.random where the date is  
-passed. I also added logs to see the android activity lifecycle in practice  
-which was discussed during theory lessons. The output was in the Logcat  
-window. Here is the result after running my application:  
-![alt text](https://raw.githubusercontent.com/DivineBee/AndroidApp/Lab1/screens/Безымянный.png)  
+A theme should be picked so I decided to make a money manager app which will analyse the expenses and will say how many % of the monthly amount I should save for different things including the "safe pillow".  
+After deciding the theme I implemented a new verison of main menu screen, which for now will contain only 3 buttons:  
+![alt text](https://github.com/DivineBee/AndroidApp/blob/Laboratory2/app/src/main/gitscreens/photo_2021-02-21_18-59-59.jpg?raw=true)  
+![alt text](https://github.com/DivineBee/AndroidApp/blob/Laboratory2/app/src/main/gitscreens/photo_2021-02-21_18-59-59%20(6).jpg?raw=true)  
 
-Example of code to see the logs:  
-```kotlin
-    . . .
-   override fun onStart() {
-        Log.d(TAG, "onStart 2: called")
-        super.onStart()
-    }
+Then I had to implement a RecyclerView where user's expenses will go. I created a layout, and the SecondActivity from previous lab now is responsible for the recycler view handling which supports vertical scrolling. Also created an Adapter Adapter to handle the data collection and bind it to the view. And used the Data Binding library it's main task is to transfer the interaction between the model and the View into xml files. It greatly simplifies writing code and eliminates the need to use findByViewId () methods, add links to view-elements inside Activities or Fragments. The working recycler view with some random data similar to real ones looks like this:  
+![alt text](https://github.com/DivineBee/AndroidApp/blob/Laboratory2/app/src/main/gitscreens/photo_2021-02-21_18-59-59%20(2).jpg?raw=true)  
+![alt text](https://github.com/DivineBee/AndroidApp/blob/Laboratory2/app/src/main/gitscreens/photo_2021-02-21_18-59-59%20(5).jpg?raw=true)  
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        Log.d(TAG, "onRestoreInstanceState 2: called")
-        super.onRestoreInstanceState(savedInstanceState)
-        secondDescr?.text = savedInstanceState?.getString(TEXT_CONTENTS, "")
-    }
-    . . .
-```  
-Example of using intent to pass the data from one activity to other:  
-
-```kotlin
-    fun onOkButtonClick(view: View) {
-        Log.d(TAG, "onClick: called")
-
-        val dateNumber = birthNumber.text.toString().toInt()
-
-        val intent = Intent(this@MainActivity, SecondActivity::class.java)
-        intent.putExtra("Number", dateNumber)
-        startActivity(intent)
-    }
-```  
-And getting it and modifying in the second activity:  
-```kotlin
-        val intent = getIntent()
-        val dateNumber = intent.getIntExtra("Number", 0)
-
-        if (dateNumber != null) {
-            val temp = dateNumber * 100
-            starNumber.text = (temp..3200).random().toString()
-        }
-```  
-In the _screens_ folder I provided the screens on how application looks. 
-Also changed the icon and also configured the constraints in that way that  
-when a user will be rotating their phone, everything would stay in place.  
-
-## Student:
-
-| <a href="https://github.com/DivineBee" target="_blank">**Vizant Beatrice**</a>
-| :---: |
-| [![Vizant Beatrice](https://avatars0.githubusercontent.com/u/49019844?s=200&u=b232b6a4e7d387d304f0b7938eabe6cf742bacb8&v=4)](http://github.com/DivineBee)
+Also any activity in the application is supporting rotation of landscape mode and also because I didn't made constraints fixed, the application is supporting any screen size. Next I had to create a 3rd screen, I thought it will be nice to make a details page for every expense item(which in future may be a screen for editing the expenses added). So its an activity which will output more information about the items in the RecyclerView, in future the details might be such as date and time and some notes or edit information. To pass the data from recycler view to details activity I used my knowledge from the first lab where intents were used, and applied to the second lab. The details activity looks like this:  
+![alt text](https://github.com/DivineBee/AndroidApp/blob/Laboratory2/app/src/main/gitscreens/photo_2021-02-21_18-59-59%20(3).jpg?raw=true)  
+![alt text](https://github.com/DivineBee/AndroidApp/blob/Laboratory2/app/src/main/gitscreens/photo_2021-02-21_18-59-59%20(4).jpg?raw=true)  
 
 ## Status
 _finished_
