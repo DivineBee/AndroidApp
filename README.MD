@@ -116,9 +116,9 @@ class MainViewModel @ViewModelInject constructor(
         }
     }
 ```
-The next thing I did was the implementation of a navigation menu. I decided to make a bottom navigation bar. For this I created 3 fragments - info, dashboard and settings. From the main activity I've moved everything to the dashboard fragment and from there made 2 intents to other 2 available activities for now (currency converter and expenses). Below is the home fragment.
+The next thing I did was the implementation of a navigation menu. I decided to make a bottom navigation bar. For this I created 3 fragments - info, dashboard and settings. From the main activity I've moved everything to the dashboard fragment and from there made 2 intents to other 2 available activities for now (currency converter and expenses). Below is the home fragment.  
 ![alt text](https://github.com/DivineBee/AndroidApp/blob/Lab3/screens/home.jpg?raw=true)   
-Next is the settings fragment(will be configured later):
+Next is the settings fragment(will be configured later):  
 ![alt text](https://github.com/DivineBee/AndroidApp/blob/Lab3/screens/settings.jpg?raw=true)  
 And the info fragment which tells the user what this application is for:  
 ![alt text](https://github.com/DivineBee/AndroidApp/blob/Lab3/screens/info.jpg?raw=true)  
