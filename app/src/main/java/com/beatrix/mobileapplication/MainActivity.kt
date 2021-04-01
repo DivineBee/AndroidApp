@@ -1,4 +1,4 @@
-package com.beatrix.debug
+package com.beatrix.mobileapplication
 
 import android.content.Intent
 import android.os.Bundle

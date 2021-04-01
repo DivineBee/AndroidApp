@@ -1,4 +1,4 @@
-package com.beatrix.debug
+package com.beatrix.mobileapplication
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.beatrix.debug.*
 import com.beatrix.debug.databinding.ActivitySecondBinding
 import kotlinx.android.synthetic.main.activity_second.*
 

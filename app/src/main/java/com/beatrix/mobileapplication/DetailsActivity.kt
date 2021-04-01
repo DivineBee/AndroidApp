@@ -1,9 +1,11 @@
-package com.beatrix.debug
+package com.beatrix.mobileapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.beatrix.debug.databinding.ActivityDetailsBinding
+
+import com.beatrix.mobileapplication.databinding.ActivityDetailsBinding
+
 import kotlinx.android.synthetic.main.activity_details.*
 
 class DetailsActivity : AppCompatActivity() {
