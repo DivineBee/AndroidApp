@@ -2,12 +2,12 @@ package com.beatrix.mobileapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.beatrix.mobileapplication.databinding.ActivitySecondBinding
+import com.beatrix.debug.*
+import com.beatrix.debug.databinding.ActivitySecondBinding
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity(), OnExpensesDetailsClickListener {
@@ -36,7 +36,6 @@ class SecondActivity : AppCompatActivity(), OnExpensesDetailsClickListener {
     }
 
     override fun onItemClick(item: Expenses, position: Int) {
-//        Toast.makeText(this, item.amount.toString(), Toast.LENGTH_SHORT).show()
         var intent = Intent(this, DetailsActivity::class.java)
         intent.putExtra("AMOUNT", item.amount.toString())
         intent.putExtra("CATEGORY", item.category)
