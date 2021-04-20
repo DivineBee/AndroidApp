@@ -5,9 +5,9 @@ import com.beatrix.debug.utils.CurrencyResponse
 import com.beatrix.debug.utils.Resource
 import javax.inject.Inject
 
-class DefaultMainRepository @Inject constructor(
+class DefaultExchangeRepository @Inject constructor(
     private val api: CurrencyApi
-) : MainRepository {
+) : ExchangeRepository {
     override suspend fun getRates(base: String): Resource<CurrencyResponse> {
         return try {
             val response = api.getRates(base)

@@ -1,4 +1,4 @@
-package com.beatrix.debug.mvp.views
+package com.beatrix.debug.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

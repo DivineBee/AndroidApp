@@ -1,9 +1,9 @@
-package com.beatrix.debug.mvp.models
+package com.beatrix.debug.models
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.beatrix.debug.repo.MainRepository
+import com.beatrix.debug.repo.ExchangeRepository
 import com.beatrix.debug.utils.DispatcherProvider
 import com.beatrix.debug.utils.Rates
 import com.beatrix.debug.utils.Resource
@@ -12,8 +12,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import kotlin.math.round
 
-class MainViewModel @ViewModelInject constructor(
-    private val repository: MainRepository,
+class ExchangeViewModel @ViewModelInject constructor(
+    private val repository: ExchangeRepository,
     private val dispatchers: DispatcherProvider
 ) : ViewModel() {
 

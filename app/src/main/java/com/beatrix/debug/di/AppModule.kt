@@ -1,8 +1,8 @@
 package com.beatrix.debug.di
 
 import com.beatrix.debug.utils.CurrencyApi
-import com.beatrix.debug.repo.DefaultMainRepository
-import com.beatrix.debug.repo.MainRepository
+import com.beatrix.debug.repo.DefaultExchangeRepository
+import com.beatrix.debug.repo.ExchangeRepository
 import com.beatrix.debug.utils.Constants.Companion.BASE_URL
 import com.beatrix.debug.utils.DispatcherProvider
 import dagger.Module
@@ -28,7 +28,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideMainRepostiory(api: CurrencyApi): MainRepository = DefaultMainRepository(api)
+    fun provideMainRepostiory(api: CurrencyApi): ExchangeRepository = DefaultExchangeRepository(api)
 
     @Singleton
     @Provides

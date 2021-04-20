@@ -1,4 +1,4 @@
-package com.beatrix.debug.mvp.views
+package com.beatrix.debug.views
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,34 +8,35 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.beatrix.debug.*
 import com.beatrix.debug.databinding.ActivityExpensesBinding
-import com.beatrix.debug.mvp.contract.ExpensesContractInterface
-import com.beatrix.debug.mvp.presenters.ExpensesPresenter
 import com.beatrix.debug.utils.Expenses
 import com.beatrix.debug.utils.ExpensesAdapter
 import com.beatrix.debug.utils.OnExpensesDetailsClickListener
 import kotlinx.android.synthetic.main.activity_expenses.*
 
-class ExpensesActivity : AppCompatActivity(), OnExpensesDetailsClickListener,
-    ExpensesContractInterface.View {
+class ExpensesActivity : AppCompatActivity(), OnExpensesDetailsClickListener {
 
     lateinit var binding: ActivityExpensesBinding
     lateinit var expensesList: ArrayList<Expenses>
 
-    private var presenter: ExpensesPresenter? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_expenses)
-
-        presenter = ExpensesPresenter(this)
+        expensesList = ArrayList()
+        addExpenses()
 
         expensesRecycler.layoutManager = LinearLayoutManager(this)
         expensesRecycler.addItemDecoration(DividerItemDecoration(this, 1))
         expensesRecycler.adapter = ExpensesAdapter(expensesList, this)
+
     }
 
-    override fun initView() {
-        presenter?.addExpenses()
+    fun addExpenses(){
+        expensesList.add(Expenses("FOOD", 300.50, "Bought food for a week", R.drawable.food))
+        expensesList.add(Expenses("CLOTHES", 900.24, "New dress and a belt", R.drawable.clothes))
+        expensesList.add(Expenses("BEAUTY", 340.00, "Vichy cream", R.drawable.beauty))
+        expensesList.add(Expenses("BILLS", 140.50, "Paid for water and gas", R.drawable.bills))
+        expensesList.add(Expenses("CAR", 500.00, "Fueled the car", R.drawable.car))
+        expensesList.add(Expenses("DETERGENTS", 235.45, "Detergents for clothes", R.drawable.detergents))
     }
 
     override fun onItemClick(item: Expenses, position: Int) {

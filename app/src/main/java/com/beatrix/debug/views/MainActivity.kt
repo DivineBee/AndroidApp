@@ -1,4 +1,4 @@
-package com.beatrix.debug.mvp.views
+package com.beatrix.debug.views
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,9 +6,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.beatrix.debug.R
 import com.beatrix.debug.databinding.ActivityMainBinding
-import com.beatrix.debug.mvp.views.fragments.DashboardFragment
-import com.beatrix.debug.mvp.views.fragments.InfoFragment
-import com.beatrix.debug.mvp.views.fragments.SettingsFragment
+import com.beatrix.debug.views.fragments.DashboardFragment
+import com.beatrix.debug.views.fragments.InfoFragment
+import com.beatrix.debug.views.fragments.SettingsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

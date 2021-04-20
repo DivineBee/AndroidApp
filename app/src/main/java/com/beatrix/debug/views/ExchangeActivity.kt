@@ -1,4 +1,4 @@
-package com.beatrix.debug.mvp.views
+package com.beatrix.debug.views
 
 import android.graphics.Color
 import android.os.Bundle
@@ -8,7 +8,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.beatrix.debug.databinding.ActivityExchangeBinding
 
-import com.beatrix.debug.mvp.models.MainViewModel
+import com.beatrix.debug.models.ExchangeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
@@ -17,7 +17,7 @@ class ExchangeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityExchangeBinding
 
-    private val viewModel: MainViewModel by viewModels()
+    private val viewModel: ExchangeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,17 +35,17 @@ class ExchangeActivity : AppCompatActivity() {
         lifecycleScope.launchWhenStarted {
             viewModel.conversion.collect { event ->
                 when (event) {
-                    is MainViewModel.CurrencyEvent.Success -> {
+                    is ExchangeViewModel.CurrencyEvent.Success -> {
                         binding.progressBar.isVisible = false
                         binding.tvResult.setTextColor(Color.BLACK)
                         binding.tvResult.text = event.resultText
                     }
-                    is MainViewModel.CurrencyEvent.Failure -> {
+                    is ExchangeViewModel.CurrencyEvent.Failure -> {
                         binding.progressBar.isVisible = false
                         binding.tvResult.setTextColor(Color.RED)
                         binding.tvResult.text = event.errorText
                     }
-                    is MainViewModel.CurrencyEvent.Loading -> {
+                    is ExchangeViewModel.CurrencyEvent.Loading -> {
                         binding.progressBar.isVisible = true
                     }
                     else -> Unit

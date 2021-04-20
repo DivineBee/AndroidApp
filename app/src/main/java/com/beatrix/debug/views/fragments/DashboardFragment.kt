@@ -1,4 +1,4 @@
-package com.beatrix.debug.mvp.views.fragments
+package com.beatrix.debug.views.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.beatrix.debug.mvp.views.ExchangeActivity
+import com.beatrix.debug.views.ExchangeActivity
 import com.beatrix.debug.R
-import com.beatrix.debug.mvp.views.ExpensesActivity
+import com.beatrix.debug.views.ExpensesActivity
 
 
 class DashboardFragment : Fragment() {
