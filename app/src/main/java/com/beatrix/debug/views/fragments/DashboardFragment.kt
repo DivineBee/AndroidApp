@@ -11,7 +11,8 @@ import com.beatrix.debug.views.ExchangeActivity
 import com.beatrix.debug.R
 import com.beatrix.debug.views.ExpensesActivity
 
-
+// Here the main screen of the app is represented
+// TO BE EXPANDED
 class DashboardFragment : Fragment() {
 
     override fun onCreateView(
@@ -20,6 +21,8 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        // below is definition of all working buttons which send the user to the new screen
+        // depending on what button they clicked.
         val view: View = inflater.inflate(R.layout.fragment_dashboard, container, false)
         val buttonExpenses = view.findViewById<Button>(R.id.buttonExpenses)
         val buttonCurrency = view.findViewById<Button>(R.id.buttonCurrency)
