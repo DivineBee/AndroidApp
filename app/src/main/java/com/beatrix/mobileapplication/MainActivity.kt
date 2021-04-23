@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.beatrix.debug.R
 import com.beatrix.debug.fragments.DashboardFragment
 import com.beatrix.debug.fragments.InfoFragment
 import com.beatrix.debug.fragments.SettingsFragment
