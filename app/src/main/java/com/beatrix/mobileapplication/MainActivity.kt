@@ -1,84 +1,61 @@
 package com.beatrix.mobileapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.TextView
+import android.view.MenuItem
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.beatrix.debug.fragments.DashboardFragment
+import com.beatrix.debug.fragments.InfoFragment
+import com.beatrix.debug.fragments.SettingsFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
-
-private const val TAG = "MainActivity"
-private const val TEXT_CONTENTS = "TextContent"
+import org.jetbrains.annotations.NotNull
 
 class MainActivity : AppCompatActivity() {
-    private var plainDescr: TextView? = null
+
+    private val dashboardFragment = DashboardFragment()
+    private val infoFragment = InfoFragment()
+    private val settingsFragment = SettingsFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d(TAG, "onCreate: called")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intent = getIntent()
-        var values: String = ""
+        replaceFragment(dashboardFragment)
 
-        val lucky = if (intent.getStringExtra("luckyNumber") == null) ""
-        else intent.getStringExtra("luckyNumber")
+        bottomNavigationBar.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.ic_dashboard -> replaceFragment(dashboardFragment)
+                R.id.ic_settings -> replaceFragment(settingsFragment)
+                R.id.ic_info -> replaceFragment(infoFragment)
+            }
+            true
+        }
 
-        luckyNumber.text = lucky.toString()
+       /* val buttonExpenses = findViewById<Button>(R.id.buttonExpenses)
+        val buttonCurrency = findViewById<Button>(R.id.buttonCurrency)
+
+        buttonExpenses.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            // val intent = Intent(parent , SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonCurrency.setOnClickListener {
+            val intent = Intent(this, ExchangeActivity::class.java)
+            startActivity(intent)
+        }*/
     }
 
-    fun onOkButtonClick(view: View) {
-        Log.d(TAG, "onClick: called")
-
-        val dateNumber = birthNumber.text.toString().toInt()
-
-        val intent = Intent(this@MainActivity, SecondActivity::class.java)
-        intent.putExtra("Number", dateNumber)
-        startActivity(intent)
-    }
-
-    override fun onStart() {
-        Log.d(TAG, "onStart: called")
-        super.onStart()
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        Log.d(TAG, "onRestoreInstanceState: called")
-        super.onRestoreInstanceState(savedInstanceState)
-//        val savedString = savedInstanceState?.getString(TEXT_CONTENTS, "")
-//        textView?.text = savedString
-        plainDescr?.text = savedInstanceState?.getString(TEXT_CONTENTS, "")
-    }
-
-    override fun onResume() {
-        Log.d(TAG, "onResume: called")
-        super.onResume()
-    }
-
-    override fun onDestroy() {
-        Log.d(TAG, "onDestroy: called")
-        super.onDestroy()
-    }
-
-    override fun onPause() {
-        Log.d(TAG, "onPause: called")
-        super.onPause()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        Log.d(TAG, "onSaveInstanceState: called")
-        super.onSaveInstanceState(outState)
-        outState?.putString(TEXT_CONTENTS, plainDescr?.text.toString())
-    }
-
-    override fun onStop() {
-        Log.d(TAG, "onStop: called")
-        super.onStop()
-    }
-
-    override fun onRestart() {
-        Log.d(TAG, "onRestart: called")
-        super.onRestart()
-    }
+    private fun replaceFragment(fragment: Fragment) =
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.fragment_container, fragment)
+                commit()
+            }
 }
