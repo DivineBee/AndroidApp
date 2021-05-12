@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".mvp.views.DetailsActivity">
+        tools:context=".views.DetailsActivity">
 
         <ImageView
             android:id="@+id/category_image"
