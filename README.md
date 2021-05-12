@@ -64,7 +64,11 @@ The next type of tests were the unit tests, which role I described earlier. I ma
     }
 ```  
 ## Passed Tests Proofs
-
+![alt text](https://github.com/DivineBee/AndroidApp/blob/lab5/screens/111.jpg?raw=true)
+![alt text](https://github.com/DivineBee/AndroidApp/blob/lab5/screens/122.jpg?raw=true)
+![alt text](https://github.com/DivineBee/AndroidApp/blob/lab5/screens/123.jpg?raw=true)
+![alt text](https://github.com/DivineBee/AndroidApp/blob/lab5/screens/1234.jpg?raw=true)
+![alt text](https://github.com/DivineBee/AndroidApp/blob/lab5/screens/133.jpg?raw=true)
 
 ## Status  
 _FINISHED_
