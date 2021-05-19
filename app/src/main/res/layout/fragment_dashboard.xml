@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mvp.views.fragments.DashboardFragment">
+    tools:context=".views.fragments.DashboardFragment"
+    android:id="@+id/dashboardLayout">
 
     <TextView
         android:id="@+id/textMoney"
